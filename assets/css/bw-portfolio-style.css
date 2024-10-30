@@ -1,0 +1,239 @@
+/**
+ * BW Portfolio Plugin Stylesheet
+ */
+
+.bw_portfolio_container {
+	min-height: 200px;
+}
+
+.bw_portfolio_header form .portfolio_filter_sort_inputs {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 0 1rem;
+}
+
+/* portfolio filter and sort buttons */
+.bw_portfolio_header input[type="radio"] {
+	display: none;
+}
+.bw_portfolio_header label {
+	margin: 0;
+	background: #efefef;
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 0.5em 1em;
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+.bw_portfolio_header input[type='radio']:checked + label {
+	background: #fff;
+	color: #111;
+}
+.bwbh_separator {
+	color: #444;
+	margin: 0 5px;
+}
+
+/* where portfolio item cards get loaded for viewing */
+.bw_portfolio_content_area {
+	display: grid;
+	grid-gap: 2rem;
+	align-items: top;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	/* fit as many 300px columns as possible in */
+	grid-auto-rows: minmax(min-content, auto);
+}
+
+/**
+ * one column layout 
+ */
+.bw_portfolio_content_area.col-1-layout {
+	grid-template-columns: repeat(1, 1fr);
+	/* repeat column once */
+}
+
+/**
+ * two column layout 
+ */
+.bw_portfolio_content_area.col-2-layout {
+	grid-template-columns: repeat(2, 1fr);
+	/* repeat twice */
+}
+
+/**
+ * three column layout 
+ */
+.bw_portfolio_content_area.col-3-layout {
+	grid-template-columns: repeat(3, 1fr);
+	/* repeat three times */
+}
+
+/**
+ * four column layout 
+ */
+.bw_portfolio_content_area.col-4-layout {
+	grid-template-columns: repeat(4, 1fr);
+	/* repeat four times */
+}
+
+/**
+ * Styling cards of Portfolio Item cards shown in grid
+ */
+.bw_portfolio_item {
+	display: block;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #222;
+	font-size: 0.75em;
+	overflow: hidden;
+	min-height: 200px;
+	cursor: pointer;
+}
+
+.bw_portfolio_content_area>.bw_portfolio_item>a,
+.bw_portfolio_content_area>.bw_portfolio_item>a:link,
+.bw_portfolio_content_area>.bw_portfolio_item>a:visited,
+.bw_portfolio_content_area>.bw_portfolio_item>a:focus,
+.bw_portfolio_content_area>.bw_portfolio_item>a:hover {
+	text-decoration: none;
+	color: initial;
+}
+
+.bw_portfolio_item_image, .bw_portfolio_item_full_image {
+	width: 100%;
+	object-fit: contain;
+}
+
+.bw_portfolio_item_text {
+	padding: 1em;
+}
+
+.bw_portfolio_tags {
+	margin: 1em 0 0;
+	font-weight: lighter;
+}
+
+.bw_portfolio_tags span::after {
+	content: " ";
+}
+
+.bw_portfolio_item>a,
+.bw_portfolio_item>a:link,
+.bw_portfolio_item>a:visited,
+.bw_portfolio_item>a:focus,
+.bw_portfolio_item>a:active {
+	display: inline-block;
+	height: 100%;
+	text-decoration: none;
+}
+
+.bw_portfolio_item a.bw_tag {
+	font-size: 0.9em;
+	border-bottom: 1px solid #888;
+}
+
+/* 
+ * Styling for modal pop up of full portfolio item view 
+ */
+.bw_portfolio_modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background: none;
+	overflow-x: auto;
+	z-index: 999;
+}
+
+.bw_portfolio_container .loader,
+.bw_portfolio_modal .loader {
+	display: block;
+	position: relative;
+	max-width: 100px;
+	max-height: 100px;
+	margin: 2em auto 0;
+}
+
+.bw_portfolio_modal_close {
+	position: relative;
+	top: ;
+	right: ;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	line-height: 1;
+	align-self: flex-end;
+	color: #222;
+}
+
+.bw_portfolio_item_full {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 2%;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #222;
+	font-size: 1em;
+	width: 94%;
+	min-height: 200px;
+	max-height: 90%;
+	overflow-x: auto;
+	white-space: normal;
+	box-shadow: 4px 4px 6px 0px #222;
+}
+
+.bw_portfolio_item_full h3 {
+	margin: 2vh 0 0;
+}
+
+/**
+ * Media Queries
+ */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.bw_portfolio_item_full {
+		width: 92%;
+		padding: 3%;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.bw_portfolio_item_full {
+		width: 96%;
+		padding: 1%;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Even Larger devices (laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.bw_portfolio_item_full {
+		width: 92%;
+		padding: 3%;
+	}
+}
+
+/* Extra large computer monitors */
+@media only screen and (min-width: 2560px) {
+	.bw_portfolio_item_full {
+		width: 75%;
+		padding: 2em;
+	}
+}
